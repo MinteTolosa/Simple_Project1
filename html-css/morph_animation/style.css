@@ -1,0 +1,139 @@
+/* ==========================================
+   1. GLOBAL PAGE LAYOUT & CENTERING
+   ========================================== */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eef2f7; /* Soft gray page background */
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* ==========================================
+   2. RECTANGULAR BACKGROUND BOX
+   ========================================== */
+.card-box {
+  width: 400px;             /* Box width */
+  height: 250px;            /* Box height */
+  background-color: #ffffff; /* Clean white card background */
+  border-radius: 16px;      /* Rounded smooth corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Subtle smooth drop shadow */
+  
+  /* Flexbox to center the button perfectly inside this box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==========================================
+   3. AARON IKER FAVORITE BUTTON BASE STYLES
+   ========================================== */
+.favorite-button {
+  --background: #ffffff;
+  --color: #1e2229;
+  --star-color: #bbc1e1;
+  --star-hover: #646b8c;
+  --star-active: #ffd300;
+
+  display: flex;
+  align-items: center;
+  background: var(--background);
+  color: var(--color);
+  padding: 12px 24px;
+  border-radius: 11px;
+  border: 1px solid #e1e4f2; /* Subtle structural border */
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  font-weight: 500;
+  font-size: 16px;
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+/* Tactile mouse press physical feedback */
+.favorite-button:active {
+  transform: scale(0.96);
+}
+
+/* Base layout config for the icon element */
+.favorite-button .icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  position: relative;
+  /* Instructs browser to transition structural mutations smoothly */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Base configuration for the vector graphic inside the icon */
+.favorite-button .icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--star-color);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.3s, fill 0.3s;
+}
+
+/* ==========================================
+   4. INTERACTIVE STATES (HOVER & ACTIVE)
+   ========================================== */
+/* Changes outline color to slate-gray on hover */
+.favorite-button:hover {
+  --star-color: var(--star-hover);
+  border-color: #bbc1e1;
+}
+
+/* Adjusts custom property configurations when toggled active */
+.favorite-button.active {
+  --star-color: var(--star-active);
+}
+
+/* Fills the star vector shape with gold color instantly on click */
+.favorite-button.active .icon svg {
+  fill: var(--star-active);
+}
+
+/* Triggers the bouncy physics keyframe chain immediately on active toggle */
+.favorite-button.active .icon {
+  animation: icon-bounce 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* ==========================================
+   5. ANIMATION TIMELINE TIMINGS
+   ========================================== */
+/* ==========================================
+   5. ANIMATION TIMELINE TIMINGS
+   ========================================== */
+/* ==========================================
+   5. ANIMATION TIMELINE TIMINGS
+   ========================================== */
+@keyframes icon-bounce {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+  20% {
+    /* Compress slightly to build up power */
+    transform: translateY(4px) scale(0.85) rotate(-12deg);
+  }
+  50% {
+    /* High flight: Launches up into the center of the rectangular box */
+    transform: translateY(-55px) scale(1.4) rotate(25deg);
+  }
+  75% {
+    /* Gravity pull: Falls back into the button with a minor impact squash */
+    transform: translateY(3px) scale(0.9) rotate(-8deg);
+  }
+  100% {
+    /* Rest: Settles cleanly back into position */
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+

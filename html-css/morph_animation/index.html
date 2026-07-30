@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Favorite Button</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. Your layout content loads first -->
+  <div class="card-box">
+    <button class="favorite-button">
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <path class="star" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+      </div>
+      <span>Favorite</span>
+    </button>
+  </div>
+
+  <!-- 2. Your JavaScript loads last at the bottom of the body -->
+  <script>
+    const favButton = document.querySelector('.favorite-button');
+
+    favButton.addEventListener('click', () => {
+      if (favButton.classList.contains('animating')) return;
+      
+      favButton.classList.add('animating');
+      favButton.classList.toggle('active');
+      
+      setTimeout(() => {
+        favButton.classList.remove('animating');
+      }, 300);
+    });
+  </script>
+
+</body>
+</html>

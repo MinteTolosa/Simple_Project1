@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <button class="fav-btn" onclick="this.classList.toggle('active')">
+    <svg viewBox="0 0 24 24" class="heart-icon">
+    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+</div>
+</button>
+
+</body>
+</html>
+<script>
+    // Select the button element from the DOM
+const favButton = document.querySelector('.favorite-button');
+
+// Add a click event listener to the button
+favButton.addEventListener('click', () => {
+  // If the button is currently playing the animation, block extra clicks
+  if (favButton.classList.contains('animating')) {
+    return;
+  }
+  
+  // Add an temporary flag class to block rapid clicks during animation
+  favButton.classList.add('animating');
+  
+  // Toggle the active state (switches the CSS variables/colors)
+  favButton.classList.toggle('active');
+  
+  // Remove the animating flag after the CSS transition finishes (300ms)
+  setTimeout(() => {
+    favButton.classList.remove('animating');
+  }, 300);
+});
+
+</script>
