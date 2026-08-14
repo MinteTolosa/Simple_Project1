@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Todo List</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="to-do-list.css">
+</head>
+<body>
+
+<div class="card">
+  <div class="card__border"></div>
+
+  <div class="card_title__container">
+    <p class="card_title">My Todo List</p>
+    <p class="card_paragraph">Stay focused, manage your tasks, and get things done with ease.</p>  </div>
+
+  <hr class="line">
+
+  <input type="text" class="todo__input" id="todoInput" placeholder="Add a new task...">
+
+  <ul class="card__list" id="todoList"></ul>
+
+  <p class="todo__footer" id="footerText">No tasks yet</p>
+
+  <button class="todo__add_btn" id="addBtn">Add Task</button>
+</div>
+<script src="to-do-list.js"></script>
+</body>
+</html>
