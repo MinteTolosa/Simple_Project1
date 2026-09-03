@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Show Finder</title>
+
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Show Finder</h1>
+      <p>Discover shows and save your favorites</p>
+    </header>
+
+    <main>
+      <form id="searchForm">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search for a show..."
+        />
+
+        <button type="submit">Search</button>
+      </form>
+
+      <p id="message"></p>
+
+      <section>
+        <h2 id="title">Popular Shows</h2>
+
+        <div id="shows" class="grid"></div>
+      </section>
+
+      <section>
+        <h2>My Favorites</h2>
+
+        <div id="favorites" class="grid"></div>
+      </section>
+    </main>
+
+    <script src="./JS/app.js"></script>
+  </body>
+</html>
