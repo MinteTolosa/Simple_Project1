@@ -1,0 +1,53 @@
+:root {
+--card-bg: #ecdada83;
+--brand: #0A1F3D;
+--gold: #D4A027;
+--effect: #c1f06a;
+}
+body{
+    display: border-box;
+    margin: 0;
+    padding: 2rem;
+    background-color: var(--brand);
+}
+.menu-contianer{
+    display: flex;
+    position: absolute;
+    gap: .5em;
+    padding: 10px 10px;
+    border: 2px solid var(--gold);
+    
+}
+.menu-card {
+box-sizing: border-box;
+width: 320px;
+padding: 16px;
+background: var(--card-bg);
+border: 3px solid var(--gold);
+border-top: 3px solid var(--gold);
+border-radius: 1rem;
+font-family: Arial, sans-serif;
+line-height: 1.5;
+
+}
+.menu-card h3 { color: var(--brand); }
+.menu-card:hover {
+border-color: var(--card-bg);
+background: var(--effect);
+}
+.price {
+    box-sizing: border-box;
+    border: 2px solid white;
+    background-color: red;
+    width: 80px;
+    padding: 5px;
+    border-radius: .8rem;
+    
+}
+.price:hover{
+    background: green;
+    border-color: red;
+}
+.price::after { 
+    content: " ETB";
+}
